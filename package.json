@@ -9,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@types/google.maps": "^3.50.5",
     "parcel": "^2.7.0"
   },
   "devDependencies": {
