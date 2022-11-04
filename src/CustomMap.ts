@@ -10,7 +10,8 @@ interface setMap {
         lat: number,
         lng: number,
 
-    }
+    };
+    markerContent(): string;
 }
 
 export class CustomMap{
@@ -28,13 +29,20 @@ export class CustomMap{
 
     addMarker(setMap: setMap):void{
         
-        new google.maps.Marker({
+        const marker = new google.maps.Marker({
             map: this.googleMap,
             position: {
                 lat: setMap.location.lat,
                 lng: setMap.location.lng,
-
             }
+        });
+
+        marker.addListener('click', () => {
+            const infoWindow = new google.maps.InfoWindow({
+                content: setMap.markerContent()
+            });
+
+            infoWindow.open(this.googleMap, marker)
         })
     }
 
