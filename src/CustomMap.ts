@@ -5,13 +5,14 @@ const map: HTMLElement | null = document.getElementById("map");
 
 //Instructions to every other class
 //on how they can be argument
-interface setMap {
+export interface setMap {
     location: {
         lat: number,
         lng: number,
 
     };
     markerContent(): string;
+    //color: string;
 }
 
 export class CustomMap{

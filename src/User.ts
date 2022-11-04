@@ -1,11 +1,12 @@
 import {faker} from '@faker-js/faker';
-
-export class User {
+import { setMap } from './CustomMap';
+export class User implements setMap {
     name:string;
     location: {
         lat: number,
         lng: number
     }
+    color: string = 'red';
 
     constructor() {
         this.name= faker.name.firstName();
